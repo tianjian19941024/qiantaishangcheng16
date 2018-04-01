@@ -10,11 +10,11 @@
 </template>
 
 <script>
-    import  appHeader from './subcom/Header.vue';
-    import appFooter from './subcom/Footer.vue';
+    import  appHeader from './goods/subcom/Header.vue';
+    import  appFooter from './goods/subcom/Footer.vue';
     export default {        
             components:{
-                appHeader
+                 appHeader,
                  appFooter
             }
     }
