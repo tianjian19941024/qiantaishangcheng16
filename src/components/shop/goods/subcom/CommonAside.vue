@@ -23,7 +23,6 @@
         props:['list'],
         // 局部过滤器
         filters: {
-
             // 日期过滤器
             date(tplDate){
                 let date = new Date(tplDate);
