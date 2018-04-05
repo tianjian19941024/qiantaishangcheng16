@@ -1,4 +1,4 @@
-import jQuery from 'jquery';
+import jQuery from 'jquery';//在jquery插件中导入jQuery 模块开发要导入
 (function($){	
 	var fnName = 'magnifier';
 	var magnifier = {
