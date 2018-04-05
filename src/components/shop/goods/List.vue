@@ -72,6 +72,7 @@
     import  ListMain from './subcom/ListMain.vue'; 
 
     export default {
+        //注册组件
         components:{
             AppAside,
             ListMain

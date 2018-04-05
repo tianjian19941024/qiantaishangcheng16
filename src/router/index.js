@@ -18,16 +18,16 @@ import OrderComplete from '../components/shop/order/Complete';
 
 
 let goods = [
-  {name:'GoodList', path:'goods/list',component:GoodsList},
-  {name: 'GoodsDetail', path: 'goods/detail/:id', component: GoodsDetail}
+  {name:'goodsList', path:'goods/list',component:GoodsList},
+  {name: 'goodsDetail', path: 'goods/detail/:id', component: GoodsDetail}
 ];
 let shopcart = [
   { name: 'shopcart', path: 'shopcart', component: Shopcart },
 ];
 let order = [ 
-  { name: 'OrderSite', path: 'order/site/:ids', component: OrderSite }, // 需要知道哪些商品要下单
-  { name: 'OrderPay', path: 'order/pay/:id', component: OrderPay }, // 需要知道订单ID才能付款
-  { name: 'OrderComplete', path: 'order/complete', component: OrderComplete }
+  { name: 'orderSite', path: 'order/site/:ids', component: OrderSite }, // 需要知道哪些商品要下单
+  { name: 'orderPay', path: 'order/pay/:id', component: OrderPay }, // 需要知道订单ID才能付款
+  { name: 'orderComplete', path: 'order/complete', component: OrderComplete }
 ];
 
 Vue.use(Router)
