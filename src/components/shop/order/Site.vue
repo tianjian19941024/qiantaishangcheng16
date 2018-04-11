@@ -48,7 +48,7 @@
                                     <dd>
                                         <input name="book_id" id="book_id" type="hidden" value="0">
                                         <input v-model="form.accept_name"  name="accept_name" id="accept_name" type="text" class="input" datatype="s2-20" sucmsg=" ">
-                                        <span class="Validform_checktip">*收货人姓名</span>
+                                        <span class="Validform_checktip"></span>
                                     </dd>
                                 </dl>
                                 <dl class="form-group">
@@ -134,7 +134,7 @@
                                         <th width="104" align="left">金额(元)</th>
                                     </tr>
                                      <!-- 表体 -->
-                                    <tr v-for="item in goodlist" :key="item.id" >
+                                    <tr v-for="item in goodsList" :key="item.id" >
                                         <td width="68">
                                             <router-link :to="{ name: 'goodDetail', params:{id: item.id} }">
                                                 <img class="img" :src="item.img_url">
@@ -208,7 +208,7 @@
                  ids:this.$route.params.ids,
                  goodsList:[],
                  form: {
-                     express_id:'1', // 默认选中顺丰
+                     express_id: '1', // 默认选中顺丰
                      payment_id:'6'// 默认选中在线支付
                  },
                  expressPriceTable: { 1: 20, 2: 10, 3: 8, 4: 8 } // 快递ID与价格映射表
@@ -221,15 +221,15 @@
             },
             // 总价 => 遍历商品列表，累加他们的数量 * 单价
             totalPrice() {
-                return this.goodlist.reduce((sum,v)=>sum += this.$store.state.cart[v.id]*v.sell_price,0);
+                return this.goodsList.reduce((sum,v)=>sum += this.$store.state.cart[v.id]*v.sell_price,0);
             },
             // 快递费 => 判断用户所选的快递ID(form.express_id)，根据ID返回不同的价格
             expressPrice() {
-                return this.expressPriceTable[this.from.express_id];
+                return this.expressPriceTable[this.form.express_id];
             },
             // 完整总价
             orderPrice(){
-                return this.totalPrice + expressPrice;
+               return this.totalPrice + this.expressPrice;
             }
         },
 
