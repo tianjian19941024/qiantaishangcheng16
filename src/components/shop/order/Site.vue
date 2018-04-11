@@ -268,6 +268,8 @@
                 // 调接口下单
                 this.$http.post(this.$api.orderSubmit, this.form).then(res =>{
                  if(res.data.status == 0){
+                     // 下单成功后, 要从全局状态与storage里删除对应的购物车记录, 然后跳到提示支付页面
+                     this.ids.split(',').forEach(v => this.$store.commit('del', v));
                      this.$router.push({name:'orderPay',params: {id:res.data.message.orderid}});
                  }
             })
